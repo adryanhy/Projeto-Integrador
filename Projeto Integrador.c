@@ -10,7 +10,7 @@ int eqp_4;
 int eqp_5;
 int num;
 
-float car_1, car_2, car_3, car_4, car_5;
+float calculo;
 
 eqp_1 = 1;
 eqp_2 = 2;
@@ -19,214 +19,85 @@ eqp_4 = 4;
 eqp_5 = 5;
 
 int main()
-
 {
-system("mode con:cols=100 lines=30");   //função para configurar a tela do prompt
-setlocale(LC_ALL, "Portuguese");
+    system("mode con:cols=100 lines=30");   //funï¿½ï¿½o para configurar a tela do prompt
+    setlocale(LC_ALL, "Portuguese");
 int equipes[10];    //iniciando matriz para armazenar o valores das equipes
 int tempo[60];     //matriz para armazenar os tempos em min, seg, mseg
 int m;
 int seg;
-int mseg;
+int mseg, i;
     printf("                        ****************************************\n");
     printf("                        **************JHALB COMPANY*************\n");
     printf("                        ****************************************");
     sleep(3);
     system("cls");
 
-    printf("MENU PRINCIPAL - DIGITE A OPÇÃO DESEJADA\n\n");
+    printf("MENU PRINCIPAL - DIGITE A OPÃ‡ÃƒO DESEJADA\n\n");
     printf("1. Bateria 1\n");
     printf("2. Bateria 2\n");
     printf("3. Bateria 3\n");
-    printf("4. Obter classificação na tela\n");
-    printf("5. Exportar classificação geral\n");
+    printf("4. Obter classificaÃ§Ã£o na tela\n");
+    printf("5. Exportar classificaÃ§Ã£o geral\n");
     printf("6. Sair do sistema\n\n");
     scanf("%d",&numero);
     switch(numero)
     {
         case 1:
             system("cls");
-
             printf("DIGITE O TEMPO DA BATERIA 1 DE CADA UMA DAS ESQUIPES:\n\n");
-            printf("1. Tempo em minutos da equipe 1 na bateria 1: ");
+          for(i=0; i<5; i++){
+            printf("\nDigite o tempo em minutos da equipe(%d): " ,i+1);
             scanf("%d", &m);
-            printf("Tempo em segundos da equipe 1 na bateira 1: ");
+            printf("Digite o tempo em segundos da equipe(%d): " ,i+1);
             scanf("%d", &seg);
-            printf("Tempo em milisegundos da equipe 1 na bateria 1: ");
-            scanf("%d", &mseg);
-            tempo[0] = m;
-            tempo[1] = seg;
-            tempo[2] = mseg;
-
-
-            printf("\n2. Tempo em minutos da equipe 2 na bateria 1: ");
-            scanf("%d", &m);
-            printf("Tempo em segundos da equipe 2 na bateria 1: ");
-            scanf("%d", &seg);
-            printf("Tempo em milisegundos da equipe 2 na bateria 1: ");
-            scanf("%d", &mseg);
-            tempo[3] = m;
-            tempo[4] = seg;
-            tempo[5] = mseg;
-
-            printf("\n3. Tempo em minutos da equipe 3 na bateria 1: ");
-            scanf("%d", &m);
-            printf("Tempo em segundos da equipe 3 na bateria 1: ");
-            scanf("%d", &seg);
-            printf("Tempo em milisegundos da equipe 3 na bateria 1: ");
-            scanf("%d", &mseg);
-            tempo[6] = m;
-            tempo[7] = seg;
-            tempo[8] = mseg;
-
-            printf("\n4. Tempo em minutos da equipe 4 na bateria 1: ");
-            scanf("%d", &m);
-            printf("Tempo em segundos da equipe 4 na bateria 1: ");
-            scanf("%d", &seg);
-            printf("Tempo em milisegundos da equipe 4 na bateria 1: ");
-            scanf("%d", &mseg);
-            tempo[9] = m;
-            tempo[10] = seg;
-            tempo[11] = mseg;
-
-            printf("\n5. Tempo em minutos da equipe 5 na bateria 1: ");
-            scanf("%d", &m);
-            printf("Tempo em segundos da equipe 5 na bateria 1: ");
-            scanf("%d", &seg);
-            printf("Tempo em milisegundos da equipe 5 na bateria 1: ");
-            scanf("%d", &mseg);
-            tempo[12] = m;
-            tempo[13] = seg;
-            tempo[14] = mseg;
+            printf("Digite o tempo em milisegundos da equipe(%d): ",i+1);
+            scanf("%d", &mseg  );
+            calculo = (m*60)+seg+(mseg/100);
+          }
 
             printf("\n6. Voltar ao menu principal:\n\n");
             scanf("%d",&num);
             if(6)
-            {
+                {
                 system("cls");
                 return main();
-                break;
                 }
-
-
+            break;
 
             system("cls");
-            //int num ;
+         case 2:
+            system("cls");
             printf("DIGITE O TEMPO DA BATERIA 2 DE CADA UMA DAS ESQUIPES:\n\n");
-            printf("1. Tempo em minutos da equipe 1 na bateria 2: ");
+          for(i=0; i<5; i++){
+            printf("\nDigite o tempo em minutos da equipe(%d): " ,i+1);
             scanf("%d", &m);
-            printf("Tempo em segundos da equipe 1 na bateira 2: ");
+            printf("Digite o tempo em segundos da equipe(%d): " ,i+1);
             scanf("%d", &seg);
-            printf("Tempo em milisegundos da equipe 1 na bateria 2: ");
-            scanf("%d", &mseg);
-            tempo[15] = m;
-            tempo[16] = seg;
-            tempo[17] = mseg;
-
-            printf("\n2. Tempo em minutos da equipe 2 na bateria 2: ");
-            scanf("%d", &m);
-            printf("Tempo em segundos da equipe 2 na bateria 2: ");
-            scanf("%d", &seg);
-            printf("Tempo em milisegundos da equipe 2 na bateria 2: ");
-            scanf("%d", &mseg);
-            tempo[18] = m;
-            tempo[19] = seg;
-            tempo[20] = mseg;
-
-            printf("\n3. Tempo em minutos da equipe 3 na bateria 2: ");
-            scanf("%d", &m);
-            printf("Tempo em segundos da equipe 3 na bateria 2: ");
-            scanf("%d", &seg);
-            printf("Tempo em milisegundos da equipe 3 na bateria 2: ");
-            scanf("%d", &mseg);
-            tempo[21] = m;
-            tempo[22] = seg;
-            tempo[23] = mseg;
-
-            printf("\n4. Tempo em minutos da equipe 4 na bateria 2: ");
-            scanf("%d", &m);
-            printf("Tempo em segundos da equipe 4 na bateria 2: ");
-            scanf("%d", &seg);
-            printf("Tempo em milisegundos da equipe 4 na bateria 2: ");
-            scanf("%d", &mseg);
-            tempo[24] = m;
-            tempo[25] = seg;
-            tempo[26] = mseg;
-
-            printf("\n5. Tempo em minutos da equipe 5 na bateria 2: ");
-            scanf("%d", &m);
-            printf("Tempo em segundos da equipe 5 na bateria 2: ");
-            scanf("%d", &seg);
-            printf("Tempo em milisegundos da equipe 5 na bateria 2: ");
-            scanf("%d", &mseg);
-            tempo[27] = m;
-            tempo[28] = seg;
-            tempo[29] = mseg;
-
+            printf("Digite o tempo em milisegundos da equipe(%d): ",i+1);
+            scanf("%d", &mseg  );
+            calculo = (m*60)+seg+(mseg/100);
+          }
             printf("\n6. Voltar ao menu principal:\n\n");
             scanf("%d",&num);
-            if(6)
-            {
+            if(6){
                 system("cls");
                 return main();
-                break;
-                }
+            }
+            break;
 
-            case 3:
+          case 3:
             system("cls");
-            //int num;
-            system("cls");
-            //int num ;
             printf("DIGITE O TEMPO DA BATERIA 3 DE CADA UMA DAS ESQUIPES:\n\n");
-            printf("1. Tempo em minutos da equipe 1 na bateria 3: ");
+          for(i=0; i<5; i++){
+            printf("\nDigite o tempo em minutos da equipe(%d): " ,i+1);
             scanf("%d", &m);
-            printf("Tempo em segundos da equipe 1 na bateria 3: ");
+            printf("Digite o tempo em segundos da equipe(%d): " ,i+1);
             scanf("%d", &seg);
-            printf("Tempo em milisegundos da equipe 1 na bateria 3: ");
-            scanf("%d", &mseg);
-            tempo[30] = m;
-            tempo[31] = seg;
-            tempo[32] = mseg;
-
-            printf("\n2. Tempo em minutos da equipe 2 na bateria 3: ");
-            scanf("%d", &m);
-            printf("Tempo em segundos da equipe 2 na bateria 3: ");
-            scanf("%d", &seg);
-            printf("Tempo em milisegundos da equipe 2 na bateria 3: ");
-            scanf("%d", &mseg);
-            tempo[33] = m;
-            tempo[34] = seg;
-            tempo[35] = mseg;
-
-            printf("\n3. Tempo em minutos da equipe 3 na bateria 3: ");
-            scanf("%d", &m);
-            printf("Tempo em segundos da equipe 3 na bateria 3: ");
-            scanf("%d", &seg);
-            printf("Tempo em milisegundos da equipe 3 na bateria 3: ");
-            scanf("%d", &mseg);
-            tempo[36] = m;
-            tempo[37] = seg;
-            tempo[38] = mseg;
-
-            printf("\n4. Tempo em minutos da equipe 4 na bateria 3: ");
-            scanf("%d", &m);
-            printf("Tempo em segundos da equipe 4 na bateria 3: ");
-            scanf("%d", &seg);
-            printf("Tempo em milisegundos da equipe 4 na bateria 3: ");
-            scanf("%d", &mseg);
-            tempo[39] = m;
-            tempo[40] = seg;
-            tempo[41] = mseg;
-
-            printf("\n5. Tempo em minutos da equipe 5 na bateria 3: ");
-            scanf("%d", &m);
-            printf("Tempo em segundos da equipe 5 na bateria 3: ");
-            scanf("%d", &seg);
-            printf("Tempo em milisegundos da equipe 5 na bateria 3: ");
-            scanf("%d", &mseg);
-            tempo[42] = m;
-            tempo[43] = seg;
-            tempo[44] = mseg;
+            printf("Digite o tempo em milisegundos da equipe(%d): ",i+1);
+            scanf("%d", &mseg  );
+            calculo = (m*60)+seg+(mseg/100);
+          }
 
             printf("\n6. Voltar ao menu principal:\n\n");
             scanf("%d",&num);
@@ -234,12 +105,12 @@ int mseg;
             {
                 system("cls");
                 return main();
-                break;
                 }
+            break;
 
             case 4:
             system("cls");
-            printf("Obter classificação na tela\n\n");
+            printf("Obter classificaÃ§Ã£o na tela\n\n");
             printf("1 lugar: EQUIPE %d  \tTempo (%d:%d:%d)\n", num,tempo[0],tempo[1],tempo[2]);
             printf("2 lugar: EQUIPE %d  \tTempo (minutos:segundos:mili-segundos):  xx:xx:xx \n", eqp_2);
             printf("3 lugar: EQUIPE %d  \tTempo (minutos:segundos:mili-segundos):  xx:xx:xx \n", eqp_3);
@@ -249,7 +120,7 @@ int mseg;
 
             case 5:
             system("cls");
-            printf("Exportar classificação geral\n");
+            printf("Exportar classificaÃ§Ã£o geral\n");
             break;
 
             case 6:
@@ -260,11 +131,7 @@ int mseg;
             break;
 
             default:
-                printf("Opção inválida, por favor escolha uma das opcoes acima!!\n");
-                //system("cls");
+                printf("Opï¿½ï¿½o invï¿½lida, por favor escolha uma das opcoes acima!!\n");
+                system("cls");}
 
-
-    }
-
-    }
-
+}
