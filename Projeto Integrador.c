@@ -11,6 +11,7 @@ float bat2[5];
 float bat3[5];
 float calculo;
 float maior_tempo[5]; float media[5]; float total[5];
+int class_equipe[5]; classtempo[5];
 
 int main()
 {
@@ -20,7 +21,7 @@ int main()
 int equipes[10];    //iniciando matriz para armazenar o valores das equipes
 int m;
 int seg;
-int mseg, i;
+int mseg, i,j, temp;
     /*printf("                        ****************************************\n");
     printf("                        **************JHALB COMPANY*************\n");
     printf("                        ****************************************");
@@ -109,6 +110,7 @@ int mseg, i;
             case 4:
             system("cls");
             for (i = 0; i < 5; i ++){
+                    /*Logica para comparar os valores*/
             if(bat1[i] > bat2[i]){           //se bat1 na posição [i] for maior que bat2 na posição [i]
                 if(bat1[i] > bat3[i])       //se bat1 na posição [i] for maior que bat3 na posição [i]
                 maior_tempo[i] = bat1[i];  //entao maior_tempo recebe bat1[i]
@@ -124,13 +126,31 @@ int mseg, i;
             }
             total[i] = (bat1[i] + bat2[i] + bat3[i]) - maior_tempo[i];
             media[i] = total[i] / 2;
+
+            for (i=0;i<5;i++){
+                printf ("\n Equipe %d tempo final = %f", i+1, media[i]);
+                classtempo[i]= media[i];
+                class_equipe[i]=i+1;
+                }
+                printf ("\n\n");
+                for (i=0;i<5;i++)
+                {
+                for (j=i+1;j<5;j++)
+                {
+                if (classtempo[i] > classtempo[j])
+                {
+                    temp = classtempo[i];
+                    classtempo[i] = classtempo[j];
+                    classtempo[j] = temp;
+                    temp = class_equipe[i];
+                    class_equipe[i] = class_equipe[j];
+                    class_equipe[j] = temp;}
+                }
+                }
+            for (i=0;i<5;i++)
+            {
+            printf("\n %d° LUGAR ||| Equipe: %d ||| Tempo: %d",i+1,class_equipe[i],classtempo[i]);
             }
-            printf("Obter classificação na tela\n\n");
-            printf("1 lugar: EQUIPE %f  \tTempo (%f:%d:%d)\n", bat1[i]);
-            printf("2 lugar: EQUIPE %d  \tTempo (minutos:segundos:mili-segundos):  xx:xx:xx \n" );
-            printf("3 lugar: EQUIPE %d  \tTempo (minutos:segundos:mili-segundos):  xx:xx:xx \n" );
-            printf("4 lugar: EQUIPE %d  \tTempo (minutos:segundos:mili-segundos):  xx:xx:xx \n" );
-            printf("5 lugar: EQUIPE %d  \tTempo (minutos:segundos:mili-segundos):  xx:xx:xx \n" );
             break;
 
             case 5:
@@ -149,4 +169,5 @@ int mseg, i;
                 printf("Opção invalida, por favor escolha uma das opcoes acima!!\n");
                 system("cls");}
 
+}
 }
