@@ -10,9 +10,8 @@ float bat1[5];
 float bat2[5];
 float bat3[5];
 float calculo;
-float maior_tempo[5]; float media[5]; float total[5];
-int class_equipe[5]; classtempo[5];
-
+float maior_tempo[5]; float media[5]; float total[5], classtempo[5];
+int class_equipe[5];
 int main()
 {
     system("mode con:cols=100 lines=30");   //fun��o para configurar o prompt
@@ -75,6 +74,7 @@ int mseg, i,j, temp;
             scanf("%d", &mseg  );
             calculo = (m*60)+seg+(mseg/100);
             bat2[i] = calculo;
+            printf("%f", bat2[i]);
           }
             printf("\n6. Voltar ao menu principal:\n\n");
             scanf("%d",&num);
@@ -96,6 +96,7 @@ int mseg, i,j, temp;
             scanf("%d", &mseg  );
             calculo = (m*60)+seg+(mseg/100);
             bat3[i] = calculo;
+            printf("%f", bat3[i]);
           }
 
             printf("\n6. Voltar ao menu principal:\n\n");
@@ -110,7 +111,7 @@ int mseg, i,j, temp;
             case 4:
             system("cls");
             for (i = 0; i < 5; i ++){
-                    /*Logica para comparar os valores*/
+            /*Logica para comparar os valores*/
             if(bat1[i] > bat2[i]){           //se bat1 na posição [i] for maior que bat2 na posição [i]
                 if(bat1[i] > bat3[i])       //se bat1 na posição [i] for maior que bat3 na posição [i]
                 maior_tempo[i] = bat1[i];  //entao maior_tempo recebe bat1[i]
@@ -125,12 +126,18 @@ int mseg, i,j, temp;
             maior_tempo[i] = bat3[i];
             }
             total[i] = (bat1[i] + bat2[i] + bat3[i]) - maior_tempo[i];
-            media[i] = total[i] / 2;
+            media[i] = total[i] / 2;}
 
+            /*LOGICA PARA ORDENAR AS EQUIPES*/
             for (i=0;i<5;i++){
                 printf ("\n Equipe %d tempo final = %f", i+1, media[i]);
                 classtempo[i]= media[i];
                 class_equipe[i]=i+1;
+                }
+                printf ("\n\n");
+
+                for (i=0;i<5;i++){
+                printf("%f\n", classtempo[i]);
                 }
                 printf ("\n\n");
                 for (i=0;i<5;i++)
@@ -169,5 +176,4 @@ int mseg, i,j, temp;
                 printf("Opção invalida, por favor escolha uma das opcoes acima!!\n");
                 system("cls");}
 
-}
 }
