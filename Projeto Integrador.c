@@ -12,6 +12,7 @@ float bat3[5];
 float calculo;
 float maior_tempo[5]; float media[5]; float total[5], classtempo[5];
 int class_equipe[5];
+float centesimo[5], minuto[5], segundo[5];
 int main()
 {
     system("mode con:cols=100 lines=30");   //fun��o para configurar o prompt
@@ -154,9 +155,21 @@ int mseg, i,j, temp;
                     class_equipe[j] = temp;}
                 }
                 }
+                /*
+                printf ("\nminuto %d",minuto);
+                printf ("\nsegundo %d",segundo);
+                printf ("\ncentesimo %.0f",centesimo);*/
+                //printf ("\ntempo = %.2f",temp);
+                for(i=0;i<5;i++){
+                //classtempo[i]=((minuto[i]*60)+segundo[i]+(centesimo[i]/100));
+                minuto[i]=trunc((classtempo[i]/60));
+                segundo[i]=trunc(((classtempo[i]/60)-minuto[i])*60);
+                centesimo[i]=((((classtempo[i]/60)-minuto[i])*60)-segundo[i])*100;
+                }
+            printf("\t\tCLASSIFICACAO DAS EQUIPES\n");
             for (i=0;i<5;i++)
             {
-            printf("\n %d° LUGAR ||| Equipe: %d ||| Tempo: %f",i+1,class_equipe[i],classtempo[i]);
+            printf("\n %i° LUGAR ||| Equipe: %d ||| Tempo: %.0f:%.0f:%.0f",i+1, class_equipe[i], minuto[i],segundo[i],centesimo[i]);
             }
             break;
 
