@@ -156,7 +156,7 @@ int mseg, i,j, temp;
                 }
             for (i=0;i<5;i++)
             {
-            printf("\n %d° LUGAR ||| Equipe: %d ||| Tempo: %d",i+1,class_equipe[i],classtempo[i]);
+            printf("\n %d° LUGAR ||| Equipe: %d ||| Tempo: %f",i+1,class_equipe[i],classtempo[i]);
             }
             break;
 
