@@ -27,8 +27,8 @@ int mseg, i,j, temp;
     printf("                        ****************************************");
     sleep(3);
     system("cls");*/
-
-    printf("MENU PRINCIPAL - DIGITE A OPÇÃO DESEJADA\n\n");
+    printf("\n");
+    printf("\tMENU PRINCIPAL - DIGITE A OPÇÃO DESEJADA\n\n");
     printf("1. Bateria 1\n");
     printf("2. Bateria 2\n");
     printf("3. Bateria 3\n");
@@ -99,14 +99,12 @@ int mseg, i,j, temp;
             bat3[i] = calculo;
             printf("%f", bat3[i]);
           }
-
             printf("\n6. Voltar ao menu principal:\n\n");
             scanf("%d",&num);
-            if(6)
-            {
+            if(6){
                 system("cls");
                 return main();
-                }
+            }
             break;
 
             case 4:
@@ -121,24 +119,23 @@ int mseg, i,j, temp;
             }
             else if (bat2[i] > bat3[i]){
 
-            maior_tempo[i]= bat2[i];
+                maior_tempo[i]= bat2[i];
             }
             else {
-            maior_tempo[i] = bat3[i];
+                maior_tempo[i] = bat3[i];
             }
-            total[i] = (bat1[i] + bat2[i] + bat3[i]) - maior_tempo[i];
-            media[i] = total[i] / 2;}
-
+                total[i] = (bat1[i] + bat2[i] + bat3[i]) - maior_tempo[i];
+                media[i] = total[i] / 2;}
             /*LOGICA PARA ORDENAR AS EQUIPES*/
             for (i=0;i<5;i++){
-                printf ("\n Equipe %d tempo final = %f", i+1, media[i]);
+                //printf ("\n Equipe %d tempo final = %f", i+1, media[i]);
                 classtempo[i]= media[i];
                 class_equipe[i]=i+1;
                 }
                 printf ("\n\n");
 
                 for (i=0;i<5;i++){
-                printf("%f\n", classtempo[i]);
+                //printf("%f\n", classtempo[i]);
                 }
                 printf ("\n\n");
                 for (i=0;i<5;i++)
@@ -166,26 +163,98 @@ int mseg, i,j, temp;
                 segundo[i]=trunc(((classtempo[i]/60)-minuto[i])*60);
                 centesimo[i]=((((classtempo[i]/60)-minuto[i])*60)-segundo[i])*100;
                 }
-            printf("\t\tCLASSIFICACAO DAS EQUIPES\n");
+            printf("\t\t\t\tCLASSIFICACAO DAS EQUIPES\n");
+            printf("\t\t\t ****************************************");
             for (i=0;i<5;i++)
             {
-            printf("\n %i° LUGAR ||| Equipe: %d ||| Tempo: %.0f:%.0f:%.0f",i+1, class_equipe[i], minuto[i],segundo[i],centesimo[i]);
+            printf("\n\t\t\t %i° LUGAR ||| Equipe: %d ||| Tempo: %.0f:%.0f:%0.f",i+1, class_equipe[i], minuto[i],segundo[i],centesimo[i]);}
+            printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            printf("\n6. Voltar ao menu principal:\n\n");
+            scanf("%d",&num);
+            if(6){
+                system("cls");
+                return main();
             }
+            printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
             break;
 
-            case 5:
+        case 5:
             system("cls");
             printf("Exportar classificação geral\n");
-            break;
+            FILE *f;
+            f=fopen("classificacao.txt","w");
+            for (i = 0; i < 5; i ++){
+            /*Logica para comparar os valores*/
+            if(bat1[i] > bat2[i]){           //se bat1 na posição [i] for maior que bat2 na posição [i]
+                if(bat1[i] > bat3[i])       //se bat1 na posição [i] for maior que bat3 na posição [i]
+                maior_tempo[i] = bat1[i];  //entao maior_tempo recebe bat1[i]
+            else
+                maior_tempo[i] = bat3[i]; //senao maior_tempo recebe bat3[i]
+            }
+            else if (bat2[i] > bat3[i]){
 
-            case 6:
+                maior_tempo[i]= bat2[i];
+            }
+            else {
+                maior_tempo[i] = bat3[i];
+            }
+                total[i] = (bat1[i] + bat2[i] + bat3[i]) - maior_tempo[i];
+                media[i] = total[i] / 2;}
+            /*LOGICA PARA ORDENAR AS EQUIPES*/
+            for (i=0;i<5;i++){
+                //printf ("\n Equipe %d tempo final = %f", i+1, media[i]);
+                classtempo[i]= media[i];
+                class_equipe[i]=i+1;
+                }
+                printf ("\n\n");
+
+                for (i=0;i<5;i++){
+                //printf("%f\n", classtempo[i]);
+                }
+                printf ("\n\n");
+                for (i=0;i<5;i++)
+                {
+                for (j=i+1;j<5;j++)
+                {
+                if (classtempo[i] > classtempo[j])
+                {
+                    temp = classtempo[i];
+                    classtempo[i] = classtempo[j];
+                    classtempo[j] = temp;
+                    temp = class_equipe[i];
+                    class_equipe[i] = class_equipe[j];
+                    class_equipe[j] = temp;}
+                }
+                }
+                /*
+                printf ("\nminuto %d",minuto);
+                printf ("\nsegundo %d",segundo);
+                printf ("\ncentesimo %.0f",centesimo);*/
+                //printf ("\ntempo = %.2f",temp);
+                for(i=0;i<5;i++){
+                //classtempo[i]=((minuto[i]*60)+segundo[i]+(centesimo[i]/100));
+                minuto[i]=trunc((classtempo[i]/60));
+                segundo[i]=trunc(((classtempo[i]/60)-minuto[i])*60);
+                centesimo[i]=((((classtempo[i]/60)-minuto[i])*60)-segundo[i])*100;
+                }
+            for(i=0;i<5;i++){
+                //scanf("%d",&numero);
+                fprintf(f,"\n\t\t\t %i° LUGAR ||| Equipe: %d ||| Tempo: %.0f:%.0f:%.0f",i+1, class_equipe[i], minuto[i],segundo[i],centesimo[i]);
+                }
+                fclose(f);
+            printf("\n\n\n\t\tResultado exportado para arquivo .txt no local do codigo");
+            printf("\n\n\n\n\n\n");
+        break;
+
+        case 6:
             system("cls");
-            printf("Sair do sistema? Pressione a tecla 6 novamente para confirmar\n");
-
+            printf("\n\n\n");
+            printf("\tSair do sistema? Pressione a tecla 6 novamente para confirmar\n");
+            printf("\n\n\n\n\n\n\n\n\n");
             exit (6);
-            break;
+        break;
 
-            default:
+        default:
                 printf("Opção invalida, por favor escolha uma das opcoes acima!!\n");
                 system("cls");}
 
