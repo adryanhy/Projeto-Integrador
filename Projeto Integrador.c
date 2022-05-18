@@ -28,12 +28,12 @@ int mseg, i,j, temp;
     sleep(3);
     system("cls");*/
     printf("\n");
-    printf("\tMENU PRINCIPAL - DIGITE A OPÇÃO DESEJADA\n\n");
+    printf("\tMENU PRINCIPAL - DIGITE A OPCAO DESEJADA\n\n");
     printf("1. Bateria 1\n");
     printf("2. Bateria 2\n");
     printf("3. Bateria 3\n");
-    printf("4. Obter classificação na tela\n");
-    printf("5. Exportar classificação geral\n");
+    printf("4. Obter classificacao na tela\n");
+    printf("5. Exportar classificacao geral\n");
     printf("6. Sair do sistema\n\n");
     scanf("%d",&numero);
     switch(numero)
@@ -244,6 +244,12 @@ int mseg, i,j, temp;
                 fclose(f);
             printf("\n\n\n\t\tResultado exportado para arquivo .txt no local do codigo");
             printf("\n\n\n\n\n\n");
+            printf("\n6. Voltar ao menu principal:\n\n");
+            scanf("%d",&num);
+            if(6){
+                system("cls");
+                return main();
+            }
         break;
 
         case 6:
