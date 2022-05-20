@@ -13,20 +13,21 @@ float calculo;
 float maior_tempo[5]; float media[5]; float total[5], classtempo[5];
 int class_equipe[5];
 float centesimo[5], minuto[5], segundo[5];
+FILE *f;
 int main()
 {
     system("mode con:cols=100 lines=30");   //fun��o para configurar o prompt
     setlocale(LC_ALL, "Portuguese");
 
 int equipes[10];    //iniciando matriz para armazenar o valores das equipes
-int m;
-int seg;
-int mseg, i,j, temp;
-    /*printf("                        ****************************************\n");
+float m;
+float seg, mseg, temp;
+int  i,j ;
+    printf("                        ****************************************\n");
     printf("                        **************JHALB COMPANY*************\n");
     printf("                        ****************************************");
-    sleep(3);
-    system("cls");*/
+    //sleep(3);
+    system("cls");
     printf("\n");
     printf("\tMENU PRINCIPAL - DIGITE A OPCAO DESEJADA\n\n");
     printf("1. Bateria 1\n");
@@ -43,14 +44,14 @@ int mseg, i,j, temp;
             printf("DIGITE O TEMPO DA BATERIA 1 DE CADA UMA DAS ESQUIPES:\n\n");
           for(i=0; i<5; i++){
             printf("\nDigite o tempo em minutos da equipe(%d): " ,i+1);
-            scanf("%d", &m);
+            scanf("%f", &m);
             printf("Digite o tempo em segundos da equipe(%d): " ,i+1);
-            scanf("%d", &seg);
+            scanf("%f", &seg);
             printf("Digite o tempo em milisegundos da equipe(%d): ",i+1);
-            scanf("%d", &mseg  );
+            scanf("%f", &mseg  );
             calculo = (m*60)+seg+(mseg/100);
             bat1[i] = calculo;
-            printf("%f", bat1[i]);
+            //printf("%f", bat1[i]);
           }
 
             printf("\n6. Voltar ao menu principal:\n\n");
@@ -68,14 +69,14 @@ int mseg, i,j, temp;
             printf("DIGITE O TEMPO DA BATERIA 2 DE CADA UMA DAS ESQUIPES:\n\n");
           for(i=0; i<5; i++){
             printf("\nDigite o tempo em minutos da equipe(%d): " ,i+1);
-            scanf("%d", &m);
+            scanf("%f", &m);
             printf("Digite o tempo em segundos da equipe(%d): " ,i+1);
-            scanf("%d", &seg);
+            scanf("%f", &seg);
             printf("Digite o tempo em milisegundos da equipe(%d): ",i+1);
-            scanf("%d", &mseg  );
+            scanf("%f", &mseg  );
             calculo = (m*60)+seg+(mseg/100);
             bat2[i] = calculo;
-            printf("%f", bat2[i]);
+            //printf("%f", bat2[i]);
           }
             printf("\n6. Voltar ao menu principal:\n\n");
             scanf("%d",&num);
@@ -90,14 +91,14 @@ int mseg, i,j, temp;
             printf("DIGITE O TEMPO DA BATERIA 3 DE CADA UMA DAS ESQUIPES:\n\n");
           for(i=0; i<5; i++){
             printf("\nDigite o tempo em minutos da equipe(%d): " ,i+1);
-            scanf("%d", &m);
+            scanf("%f", &m);
             printf("Digite o tempo em segundos da equipe(%d): " ,i+1);
-            scanf("%d", &seg);
+            scanf("%f", &seg);
             printf("Digite o tempo em milisegundos da equipe(%d): ",i+1);
-            scanf("%d", &mseg  );
+            scanf("%f", &mseg  );
             calculo = (m*60)+seg+(mseg/100);
             bat3[i] = calculo;
-            printf("%f", bat3[i]);
+            //printf("%f", bat3[i]);
           }
             printf("\n6. Voltar ao menu principal:\n\n");
             scanf("%d",&num);
@@ -181,7 +182,6 @@ int mseg, i,j, temp;
         case 5:
             system("cls");
             printf("Exportar classificação geral\n");
-            FILE *f;
             f=fopen("classificacao.txt","w");
             for (i = 0; i < 5; i ++){
             /*Logica para comparar os valores*/
@@ -263,5 +263,4 @@ int mseg, i,j, temp;
         default:
                 printf("Opção invalida, por favor escolha uma das opcoes acima!!\n");
                 system("cls");}
-
 }
