@@ -6,10 +6,7 @@
 
 int numero;
 int num;
-float bat1[5];
-float bat2[5];
-float bat3[5];
-float calculo;
+float bat1[5], bat2[5], bat3[5], calculo;
 float maior_tempo[5]; float media[5]; float total[5], classtempo[5];
 int class_equipe[5];
 float centesimo[5], minuto[5], segundo[5];
@@ -23,11 +20,14 @@ int equipes[10];    //iniciando matriz para armazenar o valores das equipes
 float m;
 float seg, mseg, temp;
 int  i,j ;
+    printf("\n\n");
     printf("                        ****************************************\n");
-    printf("                        **************JHALB COMPANY*************\n");
-    printf("                        ****************************************");
+    printf("                        **********    JHALB COMPANY    *********\n");
+    printf("                        ****************************************\n");
+    printf("                       ------------------------------------------- ");
+    printf("\n\n\n");
     //sleep(3);
-    system("cls");
+    //system("cls");
     printf("\n");
     printf("\tMENU PRINCIPAL - DIGITE A OPCAO DESEJADA\n\n");
     printf("1. Bateria 1\n");
@@ -182,7 +182,7 @@ int  i,j ;
         case 5:
             system("cls");
             printf("Exportar classificação geral\n");
-            f=fopen("classificacao.txt","w");
+            f=fopen("classificacao_geral.txt","w");
             for (i = 0; i < 5; i ++){
             /*Logica para comparar os valores*/
             if(bat1[i] > bat2[i]){           //se bat1 na posição [i] for maior que bat2 na posição [i]
