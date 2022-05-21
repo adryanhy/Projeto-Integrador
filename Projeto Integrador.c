@@ -13,29 +13,45 @@ float centesimo[5], minuto[5], segundo[5];
 FILE *f;
 int main()
 {
-    system("mode con:cols=100 lines=30");   //fun��o para configurar o prompt
+    system("mode con:cols=180 lines=40");   //fun��o para configurar o prompt
     setlocale(LC_ALL, "Portuguese");
 
 int equipes[10];    //iniciando matriz para armazenar o valores das equipes
 float m;
 float seg, mseg, temp;
 int  i,j ;
+ printf("\n\n");
+    printf(" \tCCCCCCCCCCCCC    HHHHH     HHHHH     RRRRRRRRRRR      OOOOOOOOOOOOO      NNNNNNNN      NNNN       OOOOOOOOOOOOO       SSSSSSSSSS                \n");
+    printf(" \tCCCCCCCCCCCCC    HHHHH     HHHHH     RRRR     RRR    OOOOOOOOOOOOOOO     NNNNNNNNN     NNNN      OOOOOOOOOOOOOOO     SSSSSSSSSSS                    \n");
+    printf(" \tCCCCC            HHHHH     HHHHH     RRRR     RRR    OOOOO     OOOOO     NNNN  NNNN    NNNN      OOOOO     OOOOO     SSSSSS                   \n");
+    printf(" \tCCCCC            HHHHHHHHHHHHHHH     RRRR     RRR    OOOOO     OOOOO     NNNN   NNNN   NNNN      OOOOO     OOOOO     SSSSSSSSSSS                    \n");
+    printf(" \tCCCCC            HHHHHHHHHHHHHHH     RRRRR RRRRR     OOOOO     OOOOO     NNNN    NNNN  NNNN      OOOOO     OOOOO      SSSSSSSSSS                             \n");
+    printf(" \tCCCCC            HHHHH     HHHHH     RRRRR RRRRR     OOOOO     OOOOO     NNNN     NNNN NNNN      OOOOO     OOOOO          SSSSSS                       \n");
+    printf(" \tCCCCCCCCCCCCC    HHHHH     HHHHH     RRRRR  RRRRR    OOOOOOOOOOOOOOO     NNNN      NNNNNNNN      OOOOOOOOOOOOOOO     SSSSSSSSSSS                        \n");
+    printf(" \tCCCCCCCCCCCCC    HHHHH     HHHHH     RRRRR   RRRRR    OOOOOOOOOOOOO      NNNN       NNNNNNN       OOOOOOOOOOOOO      SSSSSSSSSS                       \n");
+
+
+
+
+
+
+
     printf("\n\n");
-    printf("                        ****************************************\n");
-    printf("                        **********    JHALB COMPANY    *********\n");
-    printf("                        ****************************************\n");
-    printf("                       ------------------------------------------- ");
+    printf("              \t\t\t          ****************************************\n");
+    printf("              \t\t\t          **********    JHALB COMPANY    *********\n");
+    printf("              \t\t\t          ****************************************\n");
+    printf("              \t\t\t         ------------------------------------------- ");
     printf("\n\n\n");
     //sleep(3);
     //system("cls");
     printf("\n");
-    printf("\tMENU PRINCIPAL - DIGITE A OPCAO DESEJADA\n\n");
-    printf("1. Bateria 1\n");
-    printf("2. Bateria 2\n");
-    printf("3. Bateria 3\n");
-    printf("4. Obter classificacao na tela\n");
-    printf("5. Exportar classificacao geral\n");
-    printf("6. Sair do sistema\n\n");
+    printf("\t\t\t\t\tMENU PRINCIPAL - DIGITE A OPCAO DESEJADA\n\n");
+    printf("\t\t\t\t\t\t1. Bateria 1\n");
+    printf("\t\t\t\t\t\t2. Bateria 2\n");
+    printf("\t\t\t\t\t\t3. Bateria 3\n");
+    printf("\t\t\t\t\t\t4. Obter classificacao na tela\n");
+    printf("\t\t\t\t\t\t5. Exportar classificacao geral\n");
+    printf("\t\t\t\t\t\t6. Sair do sistema\n\n");
     scanf("%d",&numero);
     switch(numero)
     {
